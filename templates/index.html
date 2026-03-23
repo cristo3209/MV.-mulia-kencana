@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Tiket MV. Mulia Kencana</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f0f4f8; margin: 0; padding: 20px; }
+        .container { max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        h1 { color: #b45309; text-align: center; margin-bottom: 30px; }
+        label { display: block; margin-top: 15px; font-weight: bold; color: #334155; }
+        input, select, button { width: 100%; padding: 12px; margin-top: 5px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 16px; }
+        button { background: #b45309; color: white; font-weight: bold; border: none; cursor: pointer; margin-top: 25px; transition: 0.2s; }
+        button:hover { background: #9a3412; }
+        .note { background: #fef9e8; padding: 10px; border-radius: 8px; margin-top: 20px; font-size: 14px; text-align: center; }
+        hr { margin: 20px 0; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>🚢 MV. MULIA KENCANA</h1>
+    <form method="POST" action="/book">
+        <label>Nama Lengkap</label>
+        <input type="text" name="fullName" required>
+
+        <label>Nomor Passport / KTP</label>
+        <input type="text" name="passportNumber" required>
+
+        <label>Tanggal Keberangkatan</label>
+        <input type="date" name="departureDate" required>
+
+        <label>Waktu Keberangkatan (WIB)</label>
+        <select name="departureTime" required>
+            <option value="11:00">11:00 WIB</option>
+            <option value="12:30">12:30 WIB</option>
+            <option value="14:00">14:00 WIB</option>
+        </select>
+
+        <hr>
+        <label>Tanggal Kepulangan (opsional)</label>
+        <input type="date" name="returnDate">
+        <label>Waktu Kepulangan (WIB)</label>
+        <select name="returnTime">
+            <option value="">-- Pilih jika pulang pergi --</option>
+            <option value="15:00">15:00 WIB</option>
+            <option value="16:30">16:30 WIB</option>
+            <option value="17:00">17:00 WIB</option>
+        </select>
+
+        <label>Jumlah Dewasa</label>
+        <input type="number" name="adultCount" min="1" value="1" required>
+
+        <label>Jumlah Anak (2-11 th)</label>
+        <input type="number" name="childCount" min="0" value="0">
+
+        <button type="submit">✨ Pesan Tiket Sekarang ✨</button>
+    </form>
+    <div class="note">
+        💰 Harga Flat per Orang:<br>
+        Sekali Jalan: Rp600.000<br>
+        Pulang Pergi: Rp800.000
+    </div>
+</div>
+</body>
+</html>
