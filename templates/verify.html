@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Verifikasi Tiket MV. Mulia Kencana</title>
+    <style>
+        body { font-family: Arial; max-width: 600px; margin: 40px auto; padding: 20px; }
+        .ticket-info { background: #f5f5f5; padding: 20px; border-radius: 8px; }
+        .valid { color: green; font-weight: bold; }
+        .back-link { display: inline-block; margin-top: 20px; color: #b45309; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <h2>✅ Verifikasi Tiket MV. Mulia Kencana</h2>
+    <div class="ticket-info">
+        <p><strong>Kode Booking:</strong> {{ booking.id }}</p>
+        <p><strong>Nama:</strong> {{ booking.full_name }}</p>
+        <p><strong>Passport:</strong> {{ passport }}</p>
+        <p><strong>Keberangkatan:</strong> {{ booking.departure_date }} - {{ booking.departure_time }} WIB</p>
+        {% if booking.return_date %}
+        <p><strong>Kepulangan:</strong> {{ booking.return_date }} - {{ booking.return_time }} WIB</p>
+        {% endif %}
+        <p><strong>Penumpang:</strong> {{ booking.adult_count }} Dewasa, {{ booking.child_count }} Anak</p>
+        <p><strong>Total Harga:</strong> Rp {{ "{:,}".format(booking.total_price) }}</p>
+        <p><strong>Status:</strong> <span class="valid">TERVERIFIKASI ✓</span></p>
+    </div>
+    <a href="/" class="back-link">← Kembali ke beranda</a>
+</body>
+</html>
